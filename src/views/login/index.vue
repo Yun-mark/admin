@@ -75,6 +75,8 @@ export default {
           message: '登录成功',
           type: 'success'
         })
+        // 将接口返回的用户存储到本地方便应用
+        window.localStorage.setItem('user', JSON.stringify(res.data.data))
         // 关闭loading
         this.loginLoading = false
         this.$router.push({

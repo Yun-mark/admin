@@ -1,18 +1,18 @@
 <template>
   <el-container class="layout-container">
-    <el-aside width="200px" class="aisde">
-        <app-aside class="aside-menu"/>
+    <el-aside width="auto" class="aisde">
+        <app-aside class="aside-menu" :is-collapse="isCollapse"/>
     </el-aside>
       <el-container>
         <el-header class="header">
             <div>
-                <i class="el-icon-s-fold"></i>
+                <i @click="isCollapse = !isCollapse" class="el-icon-s-fold"></i>
                 <span>科技头条后台管理系统</span>
             </div>
             <el-dropdown>
                 <div class="avatar-wrap">
-                    <img class="avatar" src="" >
-                    <span>你好</span>
+                    <img class="avatar" :src="user.photo" >
+                    <span>{{ user.name }}</span>
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </div>
                 <el-dropdown-menu slot="dropdown">
@@ -30,6 +30,7 @@
 
 <script>
 import AppAside from './components/aside'
+import { getUserProfile } from '@/api/user.js'
 export default {
   name: '',
   components: {
@@ -37,9 +38,21 @@ export default {
   },
   props: {},
   data () {
-    return {}
+    return {
+      user: {}, // 当前登录用户信息
+      isCollapse: false // 侧边栏的展示状态
+    }
   },
-  methods: {}
+  created () {
+    this.loadUserProfile()
+  },
+  methods: {
+    loadUserProfile () {
+      getUserProfile().then(res => {
+        this.user = res.data.data
+      })
+    }
+  }
 }
 </script>
 

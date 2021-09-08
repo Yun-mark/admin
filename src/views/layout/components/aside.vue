@@ -1,8 +1,7 @@
 <template>
     <el-menu router background-color="#002033"
     text-color="#fff" active-text-color="#ffd04b"
-    @open="handleOpen" @close="handleClose"
-    default-active="/">
+    default-active="/" :collapse="isCollapse">
       <el-menu-item index="/">
         <i class="el-icon-s-unfold"></i>
         <span slot="title">首页</span>
@@ -38,7 +37,7 @@
 export default {
   name: 'LayoutIndex',
   components: {},
-  props: {},
+  props: ['is-collapse'],
   data () {
     return {}
   },
