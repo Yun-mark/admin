@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 import Login from '@/views/login/index.vue'
 import Home from '@/views/home/index.vue'
 import Layout from '@/views/layout/index.vue'
+import Article from '@/views/article/index.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,6 +17,9 @@ const routes = [
     children: [
       {
         path: '', component: Home, name: 'home'
+      },
+      {
+        path: '/article', component: Article, name: 'artcile'
       }
     ]
   }
@@ -25,4 +29,17 @@ const router = new VueRouter({
   routes
 })
 
+// 路由导航守卫,所有页面都会经过这里
+router.beforeEach((to, from, next) => {
+  const user = JSON.parse(window.localStorage.getItem('user'))
+  if (to.path !== '/login') {
+    if (user) {
+      next()
+    } else {
+      next('/login')
+    }
+  } else {
+    next()
+  }
+})
 export default router
