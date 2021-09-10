@@ -7,7 +7,7 @@
         <el-header class="header">
             <div>
                 <i @click="isCollapse = !isCollapse" class="el-icon-s-fold"></i>
-                <span>科技头条后台管理系统</span>
+                <span class="text">科技头条后台管理系统</span>
             </div>
             <el-dropdown>
                 <div class="avatar-wrap">
@@ -84,18 +84,26 @@ export default {
 .aside-menu {
         height: 100%;
         background-color: #d3dce6;
+        border: 0px;
 }
 .header {
     height: 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #b3c0d1;
+    background:linear-gradient(to right,#002033,#4f4f4f) ;
     border-bottom: 1px solid #ccc;
+    color: #fff;
+    font-size: 25px;
+    font-family:'宋体';
+    .text {
+      margin-left: 450px;
+    }
 }
 .avatar-wrap {
     display: flex;
     align-items: center;
+    color: #fff;
     .avatar {
         width: 40px;
         height: 40px;
