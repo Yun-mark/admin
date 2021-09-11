@@ -1,7 +1,15 @@
 import axios from 'axios'
+import JSONbig from 'json-bigint'
 
 const request = axios.create({
-  baseURL: 'http://api-toutiao-web.itheima.net/'
+  baseURL: 'http://api-toutiao-web.itheima.net/',
+  transformResponse: [function (data) {
+    try {
+      return JSONbig.parse(data)
+    } catch (err) {
+      return data
+    }
+  }]
 })
 // 请求拦截器
 request.interceptors.request.use(
