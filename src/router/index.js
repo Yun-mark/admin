@@ -5,6 +5,7 @@ import Login from '@/views/login/index.vue'
 import Home from '@/views/home/index.vue'
 import Layout from '@/views/layout/index.vue'
 import Article from '@/views/article/index.vue'
+import Publish from '@/views/publish/index.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,6 +21,9 @@ const routes = [
       },
       {
         path: '/article', component: Article, name: 'artcile'
+      },
+      {
+        path: '/publish', component: Publish, name: 'publish'
       }
     ]
   }

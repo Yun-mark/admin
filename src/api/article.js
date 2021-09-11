@@ -23,3 +23,14 @@ export const deleteArticle = articleId => {
     url: `/mp/v1_0/articles/${articleId}`
   })
 }
+// 添加文章
+export const addArticle = (data, draft = false) => {
+  return request({
+    method: '',
+    url: '/mp/v1_0/articles',
+    params: {
+      draft
+    },
+    data
+  })
+}

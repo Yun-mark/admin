@@ -200,5 +200,9 @@ export default {
 .article-cover {
   width: 100px;
   background-size: cover;
+  font-size: 50px;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
 }
 </style>

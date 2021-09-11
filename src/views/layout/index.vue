@@ -92,7 +92,6 @@ export default {
     justify-content: space-between;
     align-items: center;
     background:linear-gradient(to right,#002033,#4f4f4f) ;
-    border-bottom: 1px solid #ccc;
     color: #fff;
     font-size: 25px;
     font-family:'宋体';
@@ -111,6 +110,6 @@ export default {
     }
 }
 .main {
-  background-color: #d3dce6;
+  background-color: #102564;
 }
 </style>
