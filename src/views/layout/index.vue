@@ -94,7 +94,7 @@ export default {
     background:linear-gradient(to right,#002033,#4f4f4f) ;
     color: #fff;
     font-size: 25px;
-    font-family:'宋体';
+    font-family:'微软雅黑';
     .text {
       margin-left: 450px;
     }
@@ -108,5 +108,9 @@ export default {
         height: 40px;
         border-radius: 50%;
     }
+}
+.main {
+  background:url('../../assets/bg.jpg') no-repeat;
+  background-size: cover;
 }
 </style>

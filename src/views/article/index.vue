@@ -193,6 +193,7 @@ export default {
 <style lang="less" scoped>
 .filter-card{
     margin-bottom: 30px;
+    opacity: 0.8;
 }
 .list-table{
     margin-bottom: 20px;
@@ -204,5 +205,8 @@ export default {
   text-align: center;
   height: 100px;
   line-height: 100px;
+}
+.box-card{
+  opacity: 0.8;
 }
 </style>

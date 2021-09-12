@@ -103,7 +103,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('./bg.jpg') no-repeat;
+  background: url('../../assets/bg.jpg') no-repeat;
   background-size: cover;
   .login-head {
         height: 130px;
