@@ -109,7 +109,4 @@ export default {
         border-radius: 50%;
     }
 }
-.main {
-  background-color: #102564;
-}
 </style>
