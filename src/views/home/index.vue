@@ -33,6 +33,7 @@
     class="drawer"
    title="关于我们"
    model="false"
+   :append-to-body="true"
   :visible.sync="drawer"
   :with-header="false">
   <div><h1>按下ESC键返回</h1></div>
@@ -76,8 +77,6 @@ export default {
 <style lang="less" scoped>
 .drawer{
   font-size: 20px;
-  font-weight: bolder;
-  border: 3px solid ;
   text-align: center;
   letter-spacing: 2px;
   h1 {
@@ -104,7 +103,7 @@ export default {
   display: table;
   margin-top: 5%;
   text-align: center;
-  margin-left: 1.4%;
+  // margin-left: -1%;
   .el-icon-circle-plus{
     font-size: 80px;
   }
@@ -113,6 +112,7 @@ export default {
   width: 40%;
   height: 150px;
   display:inline-block;
+  margin-left: 2.3%;
   span {
     font-size: 25px;
     margin-left: 30px;
@@ -128,7 +128,7 @@ export default {
 }
 
 .about{
-  width: 20%;
+  width:24%;
   height: 150px;
   display:inline-block;
   line-height: 100px;

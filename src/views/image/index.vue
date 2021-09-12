@@ -11,7 +11,7 @@
           <el-radio-group v-model="collect" size="min" @change="onCollectChange">
               <el-radio-button :label="false">全部</el-radio-button>
               <el-radio-button :label="true">收藏</el-radio-button>
-              <el-button class="btn" type="success">上传素材</el-button>
+              <el-button class="btn" type="success" @click="dialogUploadVisible = true">上传素材</el-button>
           </el-radio-group>
       </div>
       <el-row>
@@ -21,6 +21,21 @@
           </el-col>
       </el-row>
       </el-card>
+      <el-dialog title="上传素材" :visible.sync="dialogUploadVisible" :append-to-body="true">
+        <el-upload
+          class="upload-demo"
+          drag
+          action="http://api-toutiao-web.itheima.net/mp/v1_0/user/images"
+          :headers="uploadHeaders"
+          name="image"
+          :show-file-list="false"
+          :on-success="onUploadSuccess"
+          multiple>
+          <i class="el-icon-upload"></i>
+          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+          <div class="el-upload__tip" slot="tip">只能上传jpg/png文件，且不超过500kb</div>
+        </el-upload>
+      </el-dialog>
   </div>
 </template>
 
@@ -31,9 +46,14 @@ export default {
   components: {},
   props: {},
   data () {
+    const user = JSON.parse(window.localStorage.getItem('user'))
     return {
       collect: false,
-      images: [] // 图片列表
+      images: [], // 图片列表
+      dialogUploadVisible: false,
+      uploadHeaders: {
+        Authorization: `Bearer ${user.token}`
+      }
     }
   },
   created () {
@@ -49,6 +69,10 @@ export default {
     },
     onCollectChange (value) {
       this.loadImages(value)
+    },
+    onUploadSuccess () {
+      this.dialogUploadVisible = false
+      this.loadImages(false)
     }
   }
 }
@@ -60,5 +84,9 @@ export default {
   .btn{
       margin-left: 500px;
   }
+}
+
+.image-container{
+  opacity: 0.8;
 }
 </style>

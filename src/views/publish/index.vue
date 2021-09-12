@@ -253,4 +253,8 @@ export default {
 }
 </script>
 
-<style scoped lang="less"></style>
+<style scoped lang="less">
+.publish-container{
+  opacity: 0.8  ;
+}
+</style>

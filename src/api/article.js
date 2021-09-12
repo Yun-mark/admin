@@ -26,7 +26,7 @@ export const deleteArticle = articleId => {
 // 添加文章
 export const addArticle = (data, draft = false) => {
   return request({
-    method: '',
+    method: 'POST',
     url: '/mp/v1_0/articles',
     params: {
       draft
