@@ -7,6 +7,8 @@ import Layout from '@/views/layout/index.vue'
 import Article from '@/views/article/index.vue'
 import Publish from '@/views/publish/index.vue'
 import Image from '@/views/image/index.vue'
+import Comment from '@/views/comment/index.vue'
+import Fans from '@/views/fans/index.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -28,6 +30,12 @@ const routes = [
       },
       {
         path: '/image', component: Image, name: 'image'
+      },
+      {
+        path: '/comment', component: Comment, name: 'comment'
+      },
+      {
+        path: '/fans', component: Fans, name: 'fans'
       }
     ]
   }

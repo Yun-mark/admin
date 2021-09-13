@@ -21,11 +21,11 @@
         <div class="txt">素材管理</div>
       </el-card>
       <el-card class="quarter-div">
-        <div class="photo"><i class="el-icon-s-custom" :style="{color:iconColor3}"></i></div>
+        <div class="photo"><i class="el-icon-s-custom" @click="$router.push('/fans')" :style="{color:iconColor3}"></i></div>
         <div class="txt">粉丝管理</div>
       </el-card>
       <el-card class="quarter-div">
-        <div class="photo"><i class="el-icon-s-comment" :style="{color:iconColor4}"></i></div>
+        <div class="photo"><i class="el-icon-s-comment" @click="$router.push('/comment')" :style="{color:iconColor4}"></i></div>
         <div class="txt">评论管理</div>
       </el-card>
     </div>
