@@ -74,9 +74,9 @@
 import {
   getArticleChannels,
   addArticle,
-  getArticle,
+  getArticles,
   updateArticle
-} from '@/api/article'
+} from '@/api/article.js'
 import {
   ElementTiptap,
   Doc,
@@ -244,7 +244,7 @@ export default {
       // 找到数据接口
       // 封装请求方法
       // 请求获取数据
-      getArticle(this.$route.query.id).then(res => {
+      getArticles(this.$route.query.id).then(res => {
         // 模板绑定展示
         this.article = res.data.data
       })

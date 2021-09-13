@@ -1,7 +1,7 @@
 <template>
   <div class="home-container">
     <el-card class="text">科技，让管理更高效
-      <div class="pic"><i class="el-icon-s-operation" :style="{color:iconColor6}"></i></div>
+      <div class="pic"><i class="el-icon-s-operation" @click="$router.push('/settings')" :style="{color:iconColor6}"></i></div>
     </el-card>
     <div class="head">
       <el-card class="write"><i class="el-icon-circle-plus" @click="$router.push('/publish')" :style="{color:iconColor5}"></i>
@@ -36,8 +36,8 @@
    :append-to-body="true"
   :visible.sync="drawer"
   :with-header="false">
-  <div><h1>按下ESC键返回</h1></div>
-  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着智能手机的普及，人们更加习惯于通过手机来看新闻。由于生活节奏的加快，很多人只能利用碎片时间来获取信息，因此，对于移动资讯客户端的需求也越来越高。科技头条项目正是在这样背景下开发出来。本项目主要着手于获取最新最热新闻资讯，通过大数据分析用户喜好精确推送咨询新闻。</span>
+  <div><h1>关于我们</h1></div>
+  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;随着智能手机的普及，人们更加习惯于手机来看新闻。生活节奏的加快，很多人只能利用碎片时间来获取信息，因此，对于移动资讯客户端的需求也越来越高。科技头条项目正是在这样背景下开发出来。本项目主要着手于获取最新最热新闻资讯，通过大数据分析用户喜好精确推送咨询新闻。</span>
   <ol>
     <li>基于 Vue.js 开发一个 PC 端内容发布系统，可以发布管理新闻文章内容。</li>
     <li>今日头条、网易新闻、腾讯新闻之类的咨询阅读软件，一般这种资讯类应用都有一个后台，专门用来给创作者发布内容。</li>
